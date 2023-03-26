@@ -1,5 +1,7 @@
 import { graph_colors, main_colors, pokemon_type_colors } from '~/libs/theme/colors'
 
+export const fontFamily = `'Pretendard', sans-serif`
+
 const theme = {
   ...main_colors,
   ...pokemon_type_colors,

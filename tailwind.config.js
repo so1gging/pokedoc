@@ -43,19 +43,15 @@ module.exports = {
       font: {
         body: 'arial',
       },
-      typography: {
-        header: {
-          headline: 'Bold 24/32px',
-          subtitle1: 'Bold 14/16px',
-          subtitle2: 'Bold 12/16px',
-          subtitle3: 'Bold 10/16px',
-        },
-        body: {
-          body1: 'Regular 14/26px',
-          body2: 'Regular 12/26px',
-          body3: 'Regular 10/26px',
-          caption: 'Regular 8/12px',
-        },
+      fontSize: {
+        headline: ['24px', { fontWeight: 'Bold', lineHeight: '32px' }],
+        subtitle1: ['14px', { fontWeight: 'Bold', lineHeight: '16px' }],
+        subtitle2: ['12px', { fontWeight: 'Bold', lineHeight: '16px' }],
+        subtitle3: ['10px', { fontWeight: 'Bold', lineHeight: '16px' }],
+        body1: ['14px', { fontWeight: 'Regular', lineHeight: '26px' }],
+        body2: ['12px', { fontWeight: 'Regular', lineHeight: '26px' }],
+        body3: ['10px', { fontWeight: 'Regular', lineHeight: '26px' }],
+        caption: ['8px', { fontWeight: 'Regular', lineHeight: '12px' }],
       },
       shadow: {
         shadow1: '0px 1px 3px 1px rgba(0, 0, 0, 0.20)',

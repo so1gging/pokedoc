@@ -1,15 +1,19 @@
 import { parseQueryParams } from '@/libs/utils/query'
+import axios from 'axios'
 
 type FetcherType = {
-  url: string
+  path: string
   params?: Record<string, any>
 }
-export default async function getFetcher<T extends Object>({ url, params }: FetcherType) {
-  const paramsString = params ? parseQueryParams(params) : undefined
-  const res = await fetch(`${url}${paramsString ? `?${paramsString}` : ''}`)
-  if (!res.ok) {
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL
+export default async function getFetcher<T extends Object>({ path, params }: FetcherType) {
+  const paramsString = params ? '?' + parseQueryParams(params) : ''
+  const res = await axios.get(`${API_URL}${path}${paramsString}`)
+
+  if (!res) {
     return undefined
   }
 
-  return res.json() as T
+  return (await res.data) as Promise<T>
 }

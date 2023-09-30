@@ -1,3 +1,4 @@
+'use client'
 import Checked from '@/assets/icons/radio-checked.svg'
 interface RadioProps {
   id: string

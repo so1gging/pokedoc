@@ -1,3 +1,4 @@
+'use client'
 import Checked from '@/assets/icons/checkbox-checked.svg'
 interface CheckboxProps {
   id: string

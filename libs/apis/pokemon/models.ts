@@ -1,4 +1,5 @@
 import { CommonPokemonAbilities, CommonPokemonImgType, CommonPokemonType } from '@/libs/apis/common/models'
+import { PokemonType } from '@/libs/utils/types'
 
 export interface PokemonVersionsGeneration {
   'generation-i': { 'red-blue': CommonPokemonImgType; yellow: CommonPokemonImgType }
@@ -71,7 +72,7 @@ export interface GetPokemonDetailResponse {
   }
   types: {
     slot: number
-    type: CommonPokemonType
+    type: { name: PokemonType; url: string }
   }[]
   weight: number
 }

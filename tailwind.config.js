@@ -8,20 +8,6 @@ module.exports = {
     './templates/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    spacing: {
-      1: '2px',
-      2: '4px',
-      3: '6px',
-      4: '8px',
-      5: '10px',
-      6: '12px',
-      7: '14px',
-      8: '16px',
-      9: '18px',
-      10: '20px',
-      11: '22px',
-      12: '24px',
-    },
     extend: {
       colors: {
         identity: {
@@ -48,11 +34,12 @@ module.exports = {
           water: '#6493EB',
         },
         grayscale: {
-          Dark: '#1D1D1D',
-          Medium: '#666666',
-          Light: '#E0E0E0',
-          Background: '#EFEFEF',
-          White: '#FFFFFF',
+          dark: '#1D1D1D',
+          medium: '#666666',
+          light: '#E0E0E0',
+          wireframe: '#B8B8B8',
+          background: '#EFEFEF',
+          white: '#FFFFFF',
         },
       },
       font: {
@@ -80,6 +67,7 @@ module.exports = {
       height: {
         44: '44px',
         108: '108px',
+        220: '220px',
         500: '500px',
       },
     },

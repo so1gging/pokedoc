@@ -8,12 +8,12 @@ interface CardProps {
 }
 export default function Card({ subtitle, title, src }: CardProps) {
   return (
-    <div className="flex flex-col w-104 h-108 shadow-shadow2 bg-white rounded relative justify-between">
-      <span className="text-right text-grayscale-Medium text-caption py-2 px-4">#{subtitle}</span>
-      <div className="absolute top-6 left-8">
+    <div className="flex flex-col w-104 h-108 shadow-shadow2 bg-white rounded-md relative justify-between">
+      <span className="text-right text-grayscale-medium text-caption py-1 px-2">#{subtitle}</span>
+      <div className="absolute top-3 left-4">
         <Image src={src} width={72} height={72} alt={'pokemon'} />
       </div>
-      <div className="w-full bg-grayscale-Background text-center pt-12 px-4 pb-2 rounded-b">{title}</div>
+      <div className="w-full bg-grayscale-Background text-center pt-12 px-2 pb-1 rounded-b">{title}</div>
     </div>
   )
 }

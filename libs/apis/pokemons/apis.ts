@@ -1,10 +1,14 @@
 import getFetcher from '@/libs/apis/fetcher'
 import { GetPokemonRequest, GetPokemonResponse } from '@/libs/apis/pokemons/models'
 
-export const getPokemon = async (reqParams: GetPokemonRequest) => {
+export const getPokemonList = async (reqParams?: GetPokemonRequest) => {
+  const limit = reqParams?.limit ?? 20
+  const page = reqParams?.page ?? 1
+  const offset = page !== 1 ? page * limit : 0
+
   const req = {
-    url: 'https://pokeapi.co/api/v2/pokemon',
-    params: reqParams,
+    path: '/pokemon',
+    params: { limit: reqParams?.limit ?? 20, offset: offset },
   }
   return await getFetcher<GetPokemonResponse>(req)
 }

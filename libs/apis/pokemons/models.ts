@@ -1,5 +1,6 @@
 export interface GetPokemonRequest {
   limit?: number
+  page?: number
 }
 
 export interface GetPokemonResponse {

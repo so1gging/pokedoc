@@ -5,6 +5,7 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './templates/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     spacing: {
@@ -74,6 +75,7 @@ module.exports = {
       },
       width: {
         104: '104px',
+        352: '352px',
       },
       height: {
         44: '44px',

@@ -13,7 +13,7 @@ export default function PokemonCard({ name, url }: PokemonCardProps) {
   const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${number}.png`
 
   const handleClick = () => {
-    router.push(`/${number}`)
+    router.push(`/detail/${number}`)
   }
 
   return (

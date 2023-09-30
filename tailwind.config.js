@@ -7,6 +7,14 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    spacing: {
+      1: '2px',
+      2: '4px',
+      3: '6px',
+      4: '8px',
+      5: '10px',
+      6: '12px',
+    },
     extend: {
       colors: {
         identity: {

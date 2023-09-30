@@ -1,4 +1,5 @@
 import { parseQueryParams } from '@/libs/utils/query'
+import axios from 'axios'
 
 type FetcherType = {
   path: string
@@ -8,11 +9,11 @@ type FetcherType = {
 const API_URL = process.env.NEXT_PUBLIC_API_URL
 export default async function getFetcher<T extends Object>({ path, params }: FetcherType) {
   const paramsString = params ? '?' + parseQueryParams(params) : ''
-  const res = await fetch(`${API_URL}${path}${paramsString}`)
+  const res = await axios.get(`${API_URL}${path}${paramsString}`)
 
-  if (!res.ok) {
+  if (!res) {
     return undefined
   }
 
-  return (await res.json()) as Promise<T>
+  return (await res.data) as Promise<T>
 }

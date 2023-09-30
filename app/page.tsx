@@ -1,15 +1,12 @@
-import { getPokemon } from '@/libs/apis/pokemons/apis'
-import PokemonList from '@/templates/PokemonList'
+'use client'
 import TitleBar from '@/templates/layout/TitleBar'
+import PokemonList from '@/templates/PokemonList'
 
-export default async function Home() {
-  const dd = await getPokemon()
-
-  console.log('pokemon/123/'.match('(?<=pokemon/)(.*)(?=/)'))
+export default function Home() {
   return (
     <main>
       <TitleBar />
-      <PokemonList data={dd} />
+      <PokemonList />
     </main>
   )
 }

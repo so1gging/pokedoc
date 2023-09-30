@@ -1,15 +1,18 @@
 import { parseQueryParams } from '@/libs/utils/query'
 
 type FetcherType = {
-  url: string
+  path: string
   params?: Record<string, any>
 }
-export default async function getFetcher<T extends Object>({ url, params }: FetcherType) {
-  const paramsString = params ? parseQueryParams(params) : undefined
-  const res = await fetch(`${url}${paramsString ? `?${paramsString}` : ''}`)
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL
+export default async function getFetcher<T extends Object>({ path, params }: FetcherType) {
+  const paramsString = params ? '?' + parseQueryParams(params) : ''
+  const res = await fetch(`${API_URL}${path}${paramsString}`)
+
   if (!res.ok) {
     return undefined
   }
 
-  return res.json() as T
+  return (await res.json()) as Promise<T>
 }

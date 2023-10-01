@@ -8,8 +8,6 @@ interface DetailBaseStatsProps {
   }[]
 }
 export default function DetailBaseStats({ stats }: DetailBaseStatsProps) {
-  console.log(stats)
-
   const StatsBar = ({ percentage }: { percentage: number }) => {
     return (
       <div className="h-4 flex items-center w-full">

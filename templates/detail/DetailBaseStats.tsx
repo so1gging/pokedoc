@@ -14,7 +14,10 @@ export default function DetailBaseStats({ stats }: DetailBaseStatsProps) {
     return (
       <div className="h-4 flex items-center w-full">
         <div className="w-full h-1 bg-grayscale-background relative rounded-md">
-          <div className="h-1 absolute bg-grayscale-wireframe rounded-md" style={{ width: `${percentage}%` }} />
+          <div
+            className="h-1 absolute bg-grayscale-wireframe rounded-md"
+            style={{ width: `${percentage > 100 ? 100 : percentage}%` }}
+          />
         </div>
       </div>
     )

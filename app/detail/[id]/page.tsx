@@ -3,6 +3,7 @@ import { useGetPokemonDetail } from '@/libs/apis/pokemon/apis'
 import TypeBadge from '@/components/TypeBadge/TypeBadge'
 import DetailHeader from '@/templates/detail/DetailHeader'
 import DetailOverview from '@/templates/detail/DetailOverview'
+import DetailImage from '@/templates/detail/DetailImage'
 
 export default function Page({ params }: { params: { id: string } }) {
   const { data } = useGetPokemonDetail(params.id)
@@ -17,6 +18,7 @@ export default function Page({ params }: { params: { id: string } }) {
         id={data.id}
         type={data.types[0].type.name}
         header={<DetailHeader name={data.name} id={data.id} />}
+        pokemonImage={<DetailImage id={data.id} />}
       />
       {/* 상세 */}
       <div className="w-full flex flex-col gap-4 items-center pt-20">

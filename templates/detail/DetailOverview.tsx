@@ -1,7 +1,6 @@
 import PokeBall from '@/assets/icons/pokeball.svg'
 import { ReactNode } from 'react'
-import { PokemonType } from '@/libs/utils/types'
-import Image from 'next/image'
+import { PokemonBackground, PokemonType } from '@/libs/utils/types'
 
 const StyleByPokemonType: Record<PokemonType, string> = {
   bug: 'bg-pokemon-bug relative w-full h-220',
@@ -24,22 +23,20 @@ const StyleByPokemonType: Record<PokemonType, string> = {
   water: 'bg-pokemon-water relative w-full h-220',
 }
 
-export default function DetailOverview({ id, type, header }: { id: number; type: PokemonType; header: ReactNode }) {
+interface DetailOverviewProps {
+  type: PokemonType
+  header: ReactNode
+  pokemonImage: ReactNode
+}
+
+export default function DetailOverview({ type, header, pokemonImage }: DetailOverviewProps) {
   return (
     <div className={StyleByPokemonType[type]}>
       <div className="absolute right-1 bottom-1">
-        <PokeBall width="208" hegiht="208" fill="bg-amber-300" opacity={0.1} />
+        <PokeBall width="208" hegiht="208" fill={PokemonBackground[type]} opacity={0.1} />
       </div>
       {header}
-      <div className="absolute w-full flex justify-center">
-        <Image
-          className="text-center"
-          width={200}
-          height={200}
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
-          alt={'detail'}
-        />
-      </div>
+      <div className="absolute w-full flex justify-center">{pokemonImage}</div>
     </div>
   )
 }

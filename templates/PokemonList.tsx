@@ -4,7 +4,15 @@ import useInfiniteCall from '@/libs/hooks/useInfiniteCall'
 import { getPokemonList } from '@/libs/apis/pokemons/apis'
 
 export default function PokemonList() {
-  const { list, obsRef, pageNum, pageChange } = useInfiniteCall<GetPokemonResponse>({ fetcher: getPokemonList })
+  const { list, obsRef } = useInfiniteCall<GetPokemonResponse>({ fetcher: getPokemonList })
+
+  if (!list) {
+    return (
+      <div className="rounded-l overflow-auto" style={{ height: 'calc(100vh - 70px)' }}>
+        <div className="grid py-6 px-3 bg-white shadow-shadow2 grid-cols-3 gap-2 w-352 h-full"></div>
+      </div>
+    )
+  }
 
   return (
     <div className="rounded-l overflow-auto" style={{ height: 'calc(100vh - 70px)' }}>

@@ -7,6 +7,13 @@ interface PokemonGenera {
     url: string
   }
 }
+
+interface PokemonFlavor {
+  flavor_text: string
+  language: CommonPokemonType
+  version: CommonPokemonType
+}
+
 export interface GetPokemonSpeciesResponse {
   id: number
   name: string
@@ -32,7 +39,7 @@ export interface GetPokemonSpeciesResponse {
   habitat: null
   generation: CommonPokemonType
   names: []
-  flavor_text_entries: []
+  flavor_text_entries: PokemonFlavor[]
   form_descriptions: []
   genera: PokemonGenera[]
   varieties: []

@@ -4,6 +4,7 @@ import TypeBadge from '@/components/TypeBadge/TypeBadge'
 import DetailHeader from '@/templates/detail/DetailHeader'
 import DetailOverview from '@/templates/detail/DetailOverview'
 import DetailImage from '@/templates/detail/DetailImage'
+import DetailAbout from '@/templates/detail/DetailAbout'
 
 export default function Page({ params }: { params: { id: string } }) {
   const { data } = useGetPokemonDetail(params.id)
@@ -15,7 +16,6 @@ export default function Page({ params }: { params: { id: string } }) {
   return (
     <>
       <DetailOverview
-        id={data.id}
         type={data.types[0].type.name}
         header={<DetailHeader name={data.name} id={data.id} />}
         pokemonImage={<DetailImage id={data.id} />}
@@ -25,8 +25,11 @@ export default function Page({ params }: { params: { id: string } }) {
         <div className="flex gap-1">
           {data?.types.map((item) => <TypeBadge key={item.type.name} title={item.type.name} type={item.type.name} />)}
         </div>
-        <div className="text-subtitle1 text-grayscale-wireframe">About</div>
-        <div></div>
+        <DetailAbout
+          weight={data.weight}
+          height={data.height}
+          abilities={data.abilities.map((item) => item.ability.name)}
+        />
       </div>
     </>
   )

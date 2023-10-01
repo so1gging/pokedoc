@@ -6,6 +6,7 @@ import DetailOverview from '@/templates/detail/DetailOverview'
 import DetailImage from '@/templates/detail/DetailImage'
 import DetailAbout from '@/templates/detail/DetailAbout'
 import { useGetPokemonSpecies } from '@/libs/apis/pokemon-species/api'
+import DetailBaseStats from '@/templates/detail/DetailBaseStats'
 
 export default function Page({ params }: { params: { id: string } }) {
   const { data } = useGetPokemonDetail(params.id)
@@ -23,7 +24,7 @@ export default function Page({ params }: { params: { id: string } }) {
         pokemonImage={<DetailImage id={data.id} />}
       />
       {/* 상세 */}
-      <div className="w-full flex flex-col gap-4 items-center pt-20">
+      <div className="w-full flex flex-col gap-4 items-center pt-20 px-5">
         <div className="flex gap-1">
           {data?.types.map((item) => <TypeBadge key={item.type.name} title={item.type.name} type={item.type.name} />)}
         </div>
@@ -32,7 +33,8 @@ export default function Page({ params }: { params: { id: string } }) {
           height={data.height}
           abilities={data.abilities.map((item) => item.ability.name)}
         />
-        <span>{speciesData.flavor_text_entries[0].flavor_text}</span>
+        <span className="text-center">{speciesData.flavor_text_entries[0].flavor_text}</span>
+        <DetailBaseStats stats={data.stats} />
       </div>
     </>
   )

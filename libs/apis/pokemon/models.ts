@@ -1,4 +1,4 @@
-import { CommonPokemonAbilities, CommonPokemonImgType, CommonPokemonType } from '@/libs/apis/common/models'
+import { CommonPokemonAbilities, CommonPokemonImgType, CommonBasicType } from '@/libs/apis/common/models'
 import { PokemonType } from '@/libs/utils/types'
 
 export interface PokemonVersionsGeneration {
@@ -29,20 +29,20 @@ export interface PokemonVersionsGeneration {
 }
 
 export interface GetPokemonDetailResponse {
-  abilities: CommonPokemonAbilities
+  abilities: CommonPokemonAbilities[]
   base_experience: number
-  forms: CommonPokemonType
+  forms: CommonBasicType
   game_indices: {
     game_index: string
-    version: CommonPokemonType
+    version: CommonBasicType
   }
 
   height: number
   held_items: {
-    items: CommonPokemonType
+    items: CommonBasicType
     version_details: {
       rarity: number
-      version: CommonPokemonType
+      version: CommonBasicType
     }
   }
   id: number
@@ -52,7 +52,7 @@ export interface GetPokemonDetailResponse {
   name: string
   order: number
   past_types: []
-  species: CommonPokemonType
+  species: CommonBasicType
   sprites: {
     [key: string]: any
     back_default: string
@@ -68,8 +68,8 @@ export interface GetPokemonDetailResponse {
   stats: {
     base_stat: number
     effort: number
-    stat: CommonPokemonType
-  }
+    stat: CommonBasicType
+  }[]
   types: {
     slot: number
     type: { name: PokemonType; url: string }

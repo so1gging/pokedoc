@@ -1,4 +1,4 @@
-import { CommonPokemonType } from '@/libs/apis/common/models'
+import { CommonBasicType } from '@/libs/apis/common/models'
 
 export interface GetPokemonRequest {
   limit?: number
@@ -9,5 +9,5 @@ export interface GetPokemonResponse {
   count: number
   next: string | null
   previous: string | null
-  results: Array<CommonPokemonType>
+  results: Array<CommonBasicType>
 }

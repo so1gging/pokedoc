@@ -29,7 +29,7 @@ export interface PokemonVersionsGeneration {
 }
 
 export interface GetPokemonDetailResponse {
-  abilities: CommonPokemonAbilities
+  abilities: CommonPokemonAbilities[]
   base_experience: number
   forms: CommonPokemonType
   game_indices: {

@@ -7,6 +7,7 @@ import DetailImage from '@/templates/detail/DetailImage'
 import DetailAbout from '@/templates/detail/DetailAbout'
 import { useGetPokemonSpecies } from '@/libs/apis/pokemon-species/api'
 import DetailBaseStats from '@/templates/detail/DetailBaseStats'
+import DetailAppearance from '@/templates/detail/DetailAppearance'
 
 export default function Page({ params }: { params: { id: string } }) {
   const { data } = useGetPokemonDetail(params.id)
@@ -35,6 +36,7 @@ export default function Page({ params }: { params: { id: string } }) {
         />
         <span className="text-center">{speciesData.flavor_text_entries[0].flavor_text}</span>
         <DetailBaseStats stats={data.stats} />
+        <DetailAppearance basic={data.sprites} versions={data.sprites.versions} />
       </div>
     </>
   )

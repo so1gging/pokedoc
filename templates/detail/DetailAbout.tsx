@@ -36,7 +36,7 @@ export default function DetailAbout({ weight, height, abilities }: DetailAboutPr
       <div className="flex flex-col justify-between">
         <div className="flex flex-col items-center">
           {abilities.map((item) => (
-            <span key={`ability-${item}`} className="text-body3 leading-4">
+            <span key={`ability-${item}`} className="text-caption leading-4">
               {item}
             </span>
           ))}

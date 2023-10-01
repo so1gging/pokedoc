@@ -1,31 +1,22 @@
 import { CommonPokemonAbilities, CommonPokemonImgType, CommonBasicType } from '@/libs/apis/common/models'
 import { PokemonType } from '@/libs/utils/types'
 
+export type GenerationI = 'red-blue' | 'yellow'
+export type GenerationII = 'crystal' | 'gold' | 'silver'
+export type GenerationIII = 'emerald' | 'firered-leafgreen' | 'ruby-sapphire'
+export type GenerationIV = 'diamond-pearl' | 'heartgold-soulsilver' | 'platinum'
+export type GenerationV = 'black-white'
+export type GenerationVI = 'omegaruby-alphasapphire' | 'x-y'
+export type GenerationVII = 'ultra-sun-ultra-moon'
+
 export interface PokemonVersionsGeneration {
-  'generation-i': { 'red-blue': CommonPokemonImgType; yellow: CommonPokemonImgType }
-  'generation-ii': {
-    crystal: CommonPokemonImgType
-    gold: CommonPokemonImgType
-    silver: CommonPokemonImgType
-  }
-  'generation-iii': {
-    emerald: CommonPokemonImgType
-    'firered-leafgreen': CommonPokemonImgType
-    'ruby-sapphire': CommonPokemonImgType
-  }
-  'generation-iv': {
-    'diamond-pearl': CommonPokemonImgType
-    'heartgold-soulsilver': CommonPokemonImgType
-    platinum: CommonPokemonImgType
-  }
-  'generation-v': {
-    'black-white': { animated: CommonPokemonImgType; front_default: string }
-  }
-  'generation-vi': {
-    'omegaruby-alphasapphire': CommonPokemonImgType
-    'x-y': CommonPokemonImgType
-  }
-  'generation-vii': { 'ultra-sun-ultra-moon': CommonPokemonImgType }
+  'generation-i': Record<GenerationI, CommonPokemonImgType>
+  'generation-ii': Record<GenerationII, CommonPokemonImgType>
+  'generation-iii': Record<GenerationIII, CommonPokemonImgType>
+  'generation-iv': Record<GenerationIV, CommonPokemonImgType>
+  'generation-v': Record<GenerationV, CommonPokemonImgType>
+  'generation-vi': Record<GenerationVI, CommonPokemonImgType>
+  'generation-vii': Record<GenerationVII, CommonPokemonImgType>
 }
 
 export interface GetPokemonDetailResponse {
@@ -53,16 +44,7 @@ export interface GetPokemonDetailResponse {
   order: number
   past_types: []
   species: CommonBasicType
-  sprites: {
-    [key: string]: any
-    back_default: string
-    back_female: string
-    back_shiny: string
-    back_shiny_female: string
-    front_default: string
-    front_female: string
-    front_shiny: string
-    front_shiny_female: string
+  sprites: CommonPokemonImgType & {
     versions: PokemonVersionsGeneration
   }
   stats: {

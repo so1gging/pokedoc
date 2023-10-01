@@ -10,7 +10,7 @@ export default function DetailAbout({ weight, height, abilities }: DetailAboutPr
   const Weight = () => {
     return (
       <div className="flex flex-col justify-between">
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex items-center justify-center py-3.5 gap-2">
           <IconWeight width={16} height={16} />
           <span className="text-body3">{weight} kg</span>
         </div>
@@ -22,7 +22,7 @@ export default function DetailAbout({ weight, height, abilities }: DetailAboutPr
   const Height = () => {
     return (
       <div className="border-x-2 flex flex-col justify-between">
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex items-center justify-center py-3.5 gap-2">
           <IconHeight width={16} height={16} />
           <span className="text-body3">{height} m</span>
         </div>

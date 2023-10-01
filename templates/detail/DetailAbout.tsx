@@ -12,7 +12,7 @@ export default function DetailAbout({ weight, height, abilities }: DetailAboutPr
       <div className="flex flex-col justify-between">
         <div className="flex items-center justify-center py-3.5 gap-2">
           <IconWeight width={16} height={16} />
-          <span className="text-body3">{weight} kg</span>
+          <span className="text-body3">{(weight / 10).toFixed(1)} kg</span>
         </div>
         <div className="text-caption text-center text-grayscale-medium">weight</div>
       </div>

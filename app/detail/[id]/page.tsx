@@ -5,11 +5,13 @@ import DetailHeader from '@/templates/detail/DetailHeader'
 import DetailOverview from '@/templates/detail/DetailOverview'
 import DetailImage from '@/templates/detail/DetailImage'
 import DetailAbout from '@/templates/detail/DetailAbout'
+import { useGetPokemonSpecies } from '@/libs/apis/pokemon-species/api'
 
 export default function Page({ params }: { params: { id: string } }) {
   const { data } = useGetPokemonDetail(params.id)
+  const { data: speciesData } = useGetPokemonSpecies(params.id)
 
-  if (!data) {
+  if (!data || !speciesData) {
     return null
   }
 
@@ -30,6 +32,7 @@ export default function Page({ params }: { params: { id: string } }) {
           height={data.height}
           abilities={data.abilities.map((item) => item.ability.name)}
         />
+        <span>{speciesData.flavor_text_entries[0].flavor_text}</span>
       </div>
     </>
   )

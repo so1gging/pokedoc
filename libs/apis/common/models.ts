@@ -1,10 +1,10 @@
-export type CommonPokemonType = {
+export type CommonBasicType = {
   name: string
   url: string
 }
 
 export interface CommonPokemonAbilities {
-  ability: CommonPokemonType
+  ability: CommonBasicType
   is_hidden: false
   slot: number
 }

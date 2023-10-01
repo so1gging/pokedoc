@@ -10,9 +10,8 @@ interface DetailAppearanceProps {
 export default function DetailAppearance({ basic, versions }: DetailAppearanceProps) {
   return (
     <>
-      <AppearanceCard item={basic} />
       <span className="text-subtitle1 text-grayscale-wireframe">Appearance</span>
-      <div></div>
+      <AppearanceCard item={basic} />
     </>
   )
 }

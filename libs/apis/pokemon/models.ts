@@ -69,7 +69,7 @@ export interface GetPokemonDetailResponse {
     base_stat: number
     effort: number
     stat: CommonBasicType
-  }
+  }[]
   types: {
     slot: number
     type: { name: PokemonType; url: string }

@@ -25,18 +25,18 @@ export default function DetailBaseStats({ stats }: DetailBaseStatsProps) {
       <div className="text-subtitle1 text-grayscale-wireframe">Base Stats</div>
       <div className="flex gap-2.5 w-full">
         <div className="flex flex-col">
-          <span className="text-subtitle3 text-grayscale-wireframe h-4 text-right">HP</span>
-          <span className="text-subtitle3 text-grayscale-wireframe h-4 text-right">ATK</span>
-          <span className="text-subtitle3 text-grayscale-wireframe h-4 text-right">DEF</span>
-          <span className="text-subtitle3 text-grayscale-wireframe h-4 text-right">SATK</span>
-          <span className="text-subtitle3 text-grayscale-wireframe h-4 text-right">SDEF</span>
-          <span className="text-subtitle3 text-grayscale-wireframe h-4 text-right">SPD</span>
+          <span className="text-subtitle3 text-grayscale-wireframe text-right">HP</span>
+          <span className="text-subtitle3 text-grayscale-wireframe text-right">ATK</span>
+          <span className="text-subtitle3 text-grayscale-wireframe text-right">DEF</span>
+          <span className="text-subtitle3 text-grayscale-wireframe text-right">SATK</span>
+          <span className="text-subtitle3 text-grayscale-wireframe text-right">SDEF</span>
+          <span className="text-subtitle3 text-grayscale-wireframe text-right">SPD</span>
         </div>
         <div className="w-0.5 bg-grayscale-light" />
         <div className="flex flex-col flex-1">
           {stats.map((item) => (
             <div key={item.stat.name} className="flex w-full items-center gap-1.5">
-              <span className="text-body3 leading-4">{item.base_stat}</span>
+              <span className="text-body3">{item.base_stat}</span>
               <StatsBar percentage={item.base_stat} />
             </div>
           ))}

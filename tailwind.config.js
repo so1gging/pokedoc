@@ -50,9 +50,9 @@ module.exports = {
         subtitle1: ['14px', { fontWeight: 'Bold', lineHeight: '16px' }],
         subtitle2: ['12px', { fontWeight: 'Bold', lineHeight: '16px' }],
         subtitle3: ['10px', { fontWeight: 'Bold', lineHeight: '16px' }],
-        body1: ['14px', { fontWeight: 'Regular', lineHeight: '26px' }],
-        body2: ['12px', { fontWeight: 'Regular', lineHeight: '26px' }],
-        body3: ['10px', { fontWeight: 'Regular', lineHeight: '26px' }],
+        body1: ['14px', { fontWeight: 'Regular', lineHeight: '16px' }],
+        body2: ['12px', { fontWeight: 'Regular', lineHeight: '16px' }],
+        body3: ['10px', { fontWeight: 'Regular', lineHeight: '16px' }],
         caption: ['8px', { fontWeight: 'Regular', lineHeight: '12px' }],
       },
       boxShadow: {

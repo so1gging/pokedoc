@@ -13,6 +13,15 @@
 <img src="https://img.shields.io/badge/React query-FF4154?style=flat-square&logo=React query&logoColor=white"/> 
 </p>
 
+### 주요 기능
+* [x] 포켓몬 조회 페이지
+  *  무한 스크롤링 
+* [x] 포켓몬 상세 페이지
+* [ ] 다국어 기능
+* [ ] 타입 태그 기능
+
 ### 📄 참고 사이트
 [poke API 무료 포켓몬 API 사이트
 ](https://pokeapi.co/docs/v2)
+
+[pokemon 이미지 호스팅 사이트](https://github.com/PokeAPI/sprites)

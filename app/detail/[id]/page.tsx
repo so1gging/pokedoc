@@ -8,13 +8,18 @@ import DetailAbout from '@/templates/detail/DetailAbout'
 import { useGetPokemonSpecies } from '@/libs/apis/pokemon-species/api'
 import DetailBaseStats from '@/templates/detail/DetailBaseStats'
 import DetailAppearance from '@/templates/detail/DetailAppearance'
+import Spinner from '@/components/Spinner/Spinner'
 
 export default function Page({ params }: { params: { id: string } }) {
   const { data } = useGetPokemonDetail(params.id)
   const { data: speciesData } = useGetPokemonSpecies(params.id)
 
   if (!data || !speciesData) {
-    return null
+    return (
+      <div className="w-full h-screen flex items-center justify-center">
+        <Spinner />
+      </div>
+    )
   }
 
   return (

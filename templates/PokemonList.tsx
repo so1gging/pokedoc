@@ -2,6 +2,7 @@ import PokemonCard from '@/templates/PokemonCard'
 import { GetPokemonResponse } from '@/libs/apis/pokemons/models'
 import useInfiniteCall from '@/libs/hooks/useInfiniteCall'
 import { getPokemonList } from '@/libs/apis/pokemons/apis'
+import Spinner from '@/components/Spinner/Spinner'
 
 export default function PokemonList() {
   const { list, obsRef } = useInfiniteCall<GetPokemonResponse>({ fetcher: getPokemonList })
@@ -9,7 +10,9 @@ export default function PokemonList() {
   if (!list) {
     return (
       <div className="rounded-l overflow-auto" style={{ height: 'calc(100vh - 70px)' }}>
-        <div className="grid py-6 px-3 bg-white shadow-shadow2 grid-cols-3 gap-2 w-352 h-full"></div>
+        <div className="py-6 px-3 bg-white shadow-shadow2 flex items-center justify-center w-352 h-full">
+          <Spinner />
+        </div>
       </div>
     )
   }

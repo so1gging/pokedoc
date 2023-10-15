@@ -9,7 +9,7 @@ export default function PokemonList() {
 
   if (!list) {
     return (
-      <div className="rounded-l overflow-auto" style={{ height: 'calc(100vh - 70px)' }}>
+      <div className="rounded-xl overflow-auto" style={{ height: 'calc(100vh - 70px)' }}>
         <div className="py-6 px-3 bg-white shadow-shadow2 flex items-center justify-center w-352 h-full">
           <Spinner />
         </div>
@@ -18,7 +18,7 @@ export default function PokemonList() {
   }
 
   return (
-    <div className="rounded-l overflow-auto" style={{ height: 'calc(100vh - 70px)' }}>
+    <div className="rounded-xl overflow-auto" style={{ height: 'calc(100vh - 70px)' }}>
       <div className="grid py-6 px-3 bg-white shadow-shadow2 grid-cols-3 gap-2 w-352">
         {list?.results.map((item) => <PokemonCard key={item.name} name={item.name} url={item.url} />)}
       </div>

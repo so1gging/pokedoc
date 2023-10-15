@@ -20,7 +20,9 @@ export default function PokemonList() {
   return (
     <div className="rounded-xl overflow-auto" style={{ height: 'calc(100vh - 70px)' }}>
       <div className="grid py-6 px-3 bg-white shadow-shadow2 grid-cols-3 gap-2 w-352">
-        {list?.results.map((item) => <PokemonCard key={item.name} name={item.name} url={item.url} />)}
+        {list.results.map((item) => (
+          <PokemonCard key={item.name} name={item.name} url={item.url} />
+        ))}
       </div>
       <div ref={obsRef} className="py-1.5 bg-red-500 text-white text-center">
         옵저버 Element

@@ -15,6 +15,16 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import { broswer } from '../../mocks/broswer'
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
+Cypress.on('test:before:run:async', async () => {
+  await broswer.start({
+    serviceWorker: {
+      url: 'http://localhost:3000/mockServiceWorker.js',
+    },
+  })
+})
+
+Cypress.on('test:after:run', async () => {
+  broswer.resetHandlers()
+})

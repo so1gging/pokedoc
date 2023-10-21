@@ -29,7 +29,6 @@ export default function Page({ params }: { params: { id: string } }) {
         header={<DetailHeader name={data.name} id={data.id} />}
         pokemonImage={<DetailImage id={data.id} />}
       />
-      {/* 상세 */}
       <div className="w-full flex flex-col gap-4 items-center pt-20 px-5">
         <div className="flex gap-1">
           {data?.types.map((item) => <TypeBadge key={item.type.name} title={item.type.name} type={item.type.name} />)}

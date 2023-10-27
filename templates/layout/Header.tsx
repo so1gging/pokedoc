@@ -2,7 +2,7 @@ import Pokeball from '@/assets/icons/pokeball.svg'
 import { useRouter } from 'next/navigation'
 import theme from '@/libs/styles/theme'
 
-export default function TitleBar() {
+export default function Header() {
   const router = useRouter()
   return (
     <div className="relative w-screen h-screen overflow-hidden" onClick={() => router.push('/')}>

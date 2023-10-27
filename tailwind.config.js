@@ -46,6 +46,7 @@ module.exports = {
         body: 'arial',
       },
       fontSize: {
+        title: ['32px', { fontWeight: 'Bold', lineHeight: '32px' }],
         headline: ['24px', { fontWeight: 'Bold', lineHeight: '32px' }],
         subtitle1: ['14px', { fontWeight: 'Bold', lineHeight: '16px' }],
         subtitle2: ['12px', { fontWeight: 'Bold', lineHeight: '16px' }],

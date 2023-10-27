@@ -1,12 +1,14 @@
 'use client'
-import TitleBar from '@/templates/layout/TitleBar'
+import Header from '@/templates/layout/Header'
 import PokemonList from '@/templates/PokemonList'
 
 export default function Home() {
   return (
     <main>
-      <TitleBar />
-      <PokemonList />
+      <Header />
+      <div className="fixed w-full h-full top-0 z-50 pt-32 pl-12 pr-12 pb-12">
+        <PokemonList />
+      </div>
     </main>
   )
 }

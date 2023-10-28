@@ -14,7 +14,7 @@ const theme = {
       Flying: '#A891EC',
       Ghost: '#70559B',
       Normal: '#AAA67F',
-      Grass: '#74CB48',
+      Grass: '#71CDB2',
       Ground: '#DEC16B',
       Ice: '#9AD6DF',
       Poison: '#A43E9E',

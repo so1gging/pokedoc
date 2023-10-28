@@ -18,8 +18,8 @@ export default function PokemonList() {
   }
 
   return (
-    <div data-testid="pokemon-list" className="overflow-auto h-full">
-      <div className="grid p-5 grid-cols-5 gap-5">
+    <div data-testid="pokemon-list" className="overflow-auto h-full w-[1000px]">
+      <div className="grid p-5 grid-cols-3 gap-5">
         {list.results.map((item) => (
           <PokemonCard key={item.name} name={item.name} url={item.url} />
         ))}

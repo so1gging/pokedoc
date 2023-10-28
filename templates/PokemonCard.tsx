@@ -2,7 +2,8 @@
 import Card from '@/components/Card/Card'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
-import { useState } from 'react'
+import useGetPokemonAllDetails from '@/templates/detail/hooks/useGetPokemonAllDetails'
+import { PokemonBackground } from '@/libs/utils/types'
 
 interface PokemonCardProps {
   name: string
@@ -10,11 +11,13 @@ interface PokemonCardProps {
 }
 export default function PokemonCard({ name, url }: PokemonCardProps) {
   const router = useRouter()
-  const [hover, setHover] = useState(false)
 
   const number = url.match('(?<=pokemon/)(.*)(?=/)')?.[0] ?? 'no'
-  const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/${number}.png`
-  const animatedImageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${number}.gif`
+  const detail = useGetPokemonAllDetails(number)
+
+  const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${number}.png`
+
+  const color = PokemonBackground[detail?.types[0] ?? 'normal']
 
   const handleClick = () => {
     router.push(`/detail/${number}`)
@@ -22,20 +25,13 @@ export default function PokemonCard({ name, url }: PokemonCardProps) {
 
   return (
     <div className="cursor-pointer" onClick={handleClick}>
-      <div onMouseOver={() => setHover(true)} onMouseOut={() => setHover(false)}>
-        <Card
-          key={name}
-          subtitle={number}
-          title={name}
-          content={
-            hover ? (
-              <Image src={animatedImageUrl} width={72} height={72} alt={'pokemon'} />
-            ) : (
-              <Image src={imageUrl} width={72} height={72} alt={'pokemon'} />
-            )
-          }
-        />
-      </div>
+      <Card
+        key={name}
+        subTitles={detail?.types ?? []}
+        color={color}
+        title={name}
+        content={<Image src={imageUrl} width={150} height={100} alt={'pokemon'} />}
+      />
     </div>
   )
 }

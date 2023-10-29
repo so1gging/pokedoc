@@ -24,7 +24,7 @@ module.exports = {
           flying: '#A891EC',
           ghost: '#70559B',
           normal: '#AAA67F',
-          grass: '#74CB48',
+          grass: '#71CDB2',
           ground: '#DEC16B',
           ice: '#9AD6DF',
           poison: '#A43E9E',

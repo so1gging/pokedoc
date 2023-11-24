@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import useGetPokemonAllDetails from '@/templates/detail/hooks/useGetPokemonAllDetails'
 import { PokemonBackground } from '@/libs/utils/types'
+import Skeleton from '@/components/Skeleton/Skeleton'
 
 interface PokemonCardProps {
   name: string
@@ -14,6 +15,10 @@ export default function PokemonCard({ name, url }: PokemonCardProps) {
 
   const number = url.match('(?<=pokemon/)(.*)(?=/)')?.[0] ?? 'no'
   const detail = useGetPokemonAllDetails(number)
+
+  if (!detail) {
+    return <Skeleton width={280} height={200} />
+  }
 
   const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${number}.png`
 

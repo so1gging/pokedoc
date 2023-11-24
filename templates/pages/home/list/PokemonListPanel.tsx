@@ -5,7 +5,7 @@ import Spinner from '@/components/Spinner/Spinner'
 import PokemonCard from '@/templates/pages/home/list/PokemonCard'
 
 export default function PokemonListPanel() {
-  const { list, loading, obsRef } = useInfiniteCall<GetPokemonResponse>({ fetcher: getPokemonList })
+  const { list, obsRef } = useInfiniteCall<GetPokemonResponse>({ fetcher: getPokemonList })
 
   if (!list) {
     return (

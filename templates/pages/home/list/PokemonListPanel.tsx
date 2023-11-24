@@ -7,7 +7,7 @@ import PokemonCard from '@/templates/pages/home/list/PokemonCard'
 export default function PokemonListPanel() {
   const { list, loading, obsRef } = useInfiniteCall<GetPokemonResponse>({ fetcher: getPokemonList })
 
-  if (loading || !list) {
+  if (!list) {
     return (
       <div className="bg-white flex items-center justify-center w-full h-full">
         <Spinner />

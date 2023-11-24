@@ -2,7 +2,7 @@ import useInfiniteCall from '@/libs/hooks/useInfiniteCall'
 import { GetPokemonResponse } from '@/libs/apis/pokemons/models'
 import { getPokemonList } from '@/libs/apis/pokemons/apis'
 import Spinner from '@/components/Spinner/Spinner'
-import PokemonCard from '@/templates/pages/home/PokemonCard'
+import PokemonCard from '@/templates/pages/home/list/PokemonCard'
 
 export default function PokemonListPanel() {
   const { list, loading, obsRef } = useInfiniteCall<GetPokemonResponse>({ fetcher: getPokemonList })

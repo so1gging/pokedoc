@@ -1,4 +1,4 @@
-import PokemonCard from '@/templates/PokemonCard'
+import PokemonCard from '@/templates/pages/root/PokemonCard'
 import { GetPokemonResponse } from '@/libs/apis/pokemons/models'
 import useInfiniteCall from '@/libs/hooks/useInfiniteCall'
 import { getPokemonList } from '@/libs/apis/pokemons/apis'

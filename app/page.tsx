@@ -1,6 +1,6 @@
 'use client'
 import Header from '@/templates/layout/Header'
-import PokemonList from '@/templates/PokemonList'
+import PokemonList from '@/templates/pages/root/PokemonList'
 
 export default function Home() {
   return (

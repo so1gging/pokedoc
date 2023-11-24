@@ -1,11 +1,11 @@
 'use client'
-import Header from '@/templates/layout/Header'
+import HomeHeader from '@/templates/pages/home/HomeHeader'
 import HomeTemplate from '@/templates/pages/home/HomeTemplate'
 
 export default function Home() {
   return (
     <main>
-      <Header />
+      <HomeHeader />
       <HomeTemplate />
     </main>
   )

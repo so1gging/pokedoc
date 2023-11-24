@@ -1,10 +1,10 @@
-import PokemonCard from '@/templates/pages/root/PokemonCard'
+import PokemonCard from '@/templates/pages/home/PokemonCard'
 import { GetPokemonResponse } from '@/libs/apis/pokemons/models'
 import useInfiniteCall from '@/libs/hooks/useInfiniteCall'
 import { getPokemonList } from '@/libs/apis/pokemons/apis'
 import Spinner from '@/components/Spinner/Spinner'
 
-export default function PokemonList() {
+export default function HomeTemplate() {
   const { list, obsRef } = useInfiniteCall<GetPokemonResponse>({ fetcher: getPokemonList })
 
   if (!list) {

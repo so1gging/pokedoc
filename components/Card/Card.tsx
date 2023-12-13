@@ -12,7 +12,7 @@ interface CardProps {
 }
 export default function Card({ number, name, imageUrl, types, color }: CardProps) {
   return (
-    <div className={`w-[184px] h-[103px] shadow-shadow1 rounded-[12px] ${color}`}>
+    <div className={`w-full h-full shadow-shadow1 rounded-[12px] ${color}`}>
       <div className="relative w-full h-full overflow-hidden pt-[10px] pb-[10px] px-[15px]">
         <div className="absolute -right-10 -top-8">
           <Pokeball width={120} fill={theme.color.grayscale.Background} opacity={0.2} />

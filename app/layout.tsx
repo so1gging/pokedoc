@@ -1,7 +1,6 @@
 'use client'
 import './globals.css'
 import { Roboto } from 'next/font/google'
-import Root from '@/templates/layout/Root'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
 const roboto = Roboto({ subsets: ['latin'], weight: ['100', '300', '400', '500', '700', '900'] })
@@ -12,7 +11,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={roboto.className}>
         <QueryClientProvider client={client}>
-          <Root>{children}</Root>
+          <div className="w-screen h-screen flex justify-center overflow-hidden">
+            <div className="min-w-[352px] max-w-[430px]">{children}</div>
+          </div>
         </QueryClientProvider>
       </body>
     </html>

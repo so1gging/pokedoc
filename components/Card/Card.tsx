@@ -34,7 +34,7 @@ export default function Card({ number, name, imageUrl, types, color }: CardProps
             ))}
           </div>
           <div className="absolute bottom-[10px] right-[5px]">
-            <Image src={imageUrl} width={85} height={85} alt={'pokemon'} />
+            <Image src={imageUrl} width={120} height={120} alt={'pokemon'} />
           </div>
         </div>
       </div>

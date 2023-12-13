@@ -29,7 +29,7 @@ export default function PokemonCard({ name, url }: PokemonCardProps) {
   }
 
   return (
-    <div className="cursor-pointer" onClick={handleClick}>
+    <div className="w-full h-[125px] cursor-pointer" onClick={handleClick}>
       <Card key={name} number={number} types={detail?.types} color={color} name={name} imageUrl={imageUrl} />
     </div>
   )

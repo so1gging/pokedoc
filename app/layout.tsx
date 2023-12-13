@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={roboto.className}>
         <QueryClientProvider client={client}>
           <div className="w-screen h-screen flex justify-center overflow-hidden">
-            <div className="min-w-[352px] max-w-[430px]">{children}</div>
+            <div className="min-w-[352px] max-w-[430px] h-full">{children}</div>
           </div>
         </QueryClientProvider>
       </body>

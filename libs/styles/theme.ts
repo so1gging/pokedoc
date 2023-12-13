@@ -31,28 +31,6 @@ const theme = {
       White: '#FFFFFF',
     },
   },
-  font: {
-    body: 'arial',
-  },
-  typography: {
-    header: {
-      headline: 'Bold 24/32px',
-      subtitle1: 'Bold 14/16px',
-      subtitle2: 'Bold 12/16px',
-      subtitle3: 'Bold 10/16px',
-    },
-    body: {
-      body1: 'Regular 14/26px',
-      body2: 'Regular 12/26px',
-      body3: 'Regular 10/26px',
-      caption: 'Regular 8/12px',
-    },
-  },
-  shadow: {
-    shadow1: '0px 1px 3px 1px rgba(0, 0, 0, 0.20)',
-    shadow2: '0px 3px 12px 3px rgba(0, 0, 0, 0.20)',
-    inner: ' 0px 1px 3px 1px rgba(0, 0, 0, 0.25) inset',
-  },
 }
 
 export default theme

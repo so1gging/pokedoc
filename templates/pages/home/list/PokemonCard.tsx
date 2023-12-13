@@ -17,7 +17,7 @@ export default function PokemonCard({ name, url }: PokemonCardProps) {
   const detail = useGetPokemonAllDetails(number)
 
   if (!detail) {
-    return <Skeleton width={280} height={200} />
+    return <Skeleton width={180} height={103} />
   }
 
   const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${number}.png`

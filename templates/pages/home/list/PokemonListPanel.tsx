@@ -16,8 +16,8 @@ export default function PokemonListPanel() {
   }
 
   return (
-    <div data-testid="pokemon-list" className="overflow-auto h-full w-[430px]">
-      <div className="grid p-1 grid-cols-2 gap-5">
+    <div data-testid="pokemon-list" className="overflow-auto h-full max-w-[1200px]">
+      <div className="flex flex-wrap gap-[10px]">
         {list?.results.map((item) => <PokemonCard key={item.name} name={item.name} url={item.url} />)}
       </div>
       <div ref={obsRef} className="py-1.5 bg-red-500 text-white text-center">

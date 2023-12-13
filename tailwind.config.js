@@ -58,7 +58,7 @@ module.exports = {
         body1: ['14px', { fontWeight: 'Regular', lineHeight: '16px' }],
         body2: ['12px', { fontWeight: 'Regular', lineHeight: '16px' }],
         body3: ['10px', { fontWeight: 'Regular', lineHeight: '16px' }],
-        caption: ['8px', { fontWeight: 'Regular', lineHeight: '12px' }],
+        caption: ['12px', { fontWeight: 'Regular', lineHeight: '16px' }],
       },
       boxShadow: {
         shadow1: ' 0px 7px 12px 0px rgba(0, 0, 0, 0.07)',
